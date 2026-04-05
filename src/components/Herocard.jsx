@@ -7,7 +7,7 @@ function Herocard() {
 Top Charts
 </h2>
 
-<div className="cards grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 px-8">
+<div className="cards grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 pl-8 pr-5">
   <Card songName="Global Top 50"/>
   <Card songName="India Top 50"/>
   <Card songName="Viral Hits"/>
@@ -21,7 +21,7 @@ Top Charts
 New Releases
 </h2>
 
-<div className="cards grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 px-8">
+<div className="cards grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 pl-8 pr-5 my-5">
   <Card songName="Latest Bollywood"/>
   <Card songName="Fresh Indie"/>
   <Card songName="New Punjabi"/>

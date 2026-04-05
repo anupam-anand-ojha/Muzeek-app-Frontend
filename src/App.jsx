@@ -2,6 +2,7 @@
 import './App.css'
 import ArtistLogin from './components/ArtistLogin'
 import Artists from './components/Artists'
+import Footer from './components/Footer'
 import Hero from './components/Hero'
 import Herocard from './components/Herocard'
 import Navbar from './components/Navbar'
@@ -18,6 +19,7 @@ function App() {
    <ArtistLogin/>
    <Artists/>
    <Songs/>
+   <Footer/>
    
    </>
   )

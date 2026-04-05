@@ -2,7 +2,7 @@ import Card from "./Card"
 
 function Songs() {
   return (
-  <div className="cards grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 px-8 mt-20">
+  <div className="cards grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 pl-15 mt-20 pr-5">
   <Card songName="Relax songs"/>
   <Card songName="Arijit Hits"/>
   <Card songName="Workout Mix"/>
