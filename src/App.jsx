@@ -5,6 +5,7 @@ import Artists from './components/Artists'
 import Hero from './components/Hero'
 import Herocard from './components/Herocard'
 import Navbar from './components/Navbar'
+import Songs from './components/Songs'
 
 function App() {
   
@@ -16,6 +17,7 @@ function App() {
    <Herocard/>
    <ArtistLogin/>
    <Artists/>
+   <Songs/>
    
    </>
   )
