@@ -8,6 +8,7 @@ import Navbar from './components/Navbar'
 import Songs from './components/Songs'
 import UploadMusic from "./components/UploadMusic";
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { ReactLenis, useLenis } from 'lenis/react'
 
 import Trending from "./pages/Trending"
 import Library from "./pages/Library"
@@ -18,9 +19,18 @@ import Setting from "./pages/Setting"
 import Login from "./pages/Login"
 import SignUp from "./pages/SignUp"
 
+
+
+  
+
 function Home() {
+  const lenis = useLenis((lenis) => {
+    // called every scroll
+    console.log(lenis)
+  })
   return (
     <>
+    <ReactLenis root />
       <Hero/>
       <Herocard/>
       <ArtistLogin/>
