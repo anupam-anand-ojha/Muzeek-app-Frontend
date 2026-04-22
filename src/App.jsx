@@ -6,6 +6,7 @@ import Hero from './components/Hero'
 import Herocard from './components/Herocard'
 import Navbar from './components/Navbar'
 import Songs from './components/Songs'
+import AllSongs from './components/AllSongs'
 import UploadMusic from "./components/UploadMusic";
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { ReactLenis, useLenis } from 'lenis/react'
@@ -18,6 +19,8 @@ import Podcast from "./pages/Podcast"
 import Setting from "./pages/Setting"
 import Login from "./pages/Login"
 import SignUp from "./pages/SignUp"
+
+
 
 
 
@@ -62,6 +65,8 @@ function App() {
         <Route path="/signUp" element={<SignUp/>} />
         <Route path="/upload" element={<UploadMusic />} />
         <Route path="/artistlogin" element={<ArtistLogin />}/>
+        <Route path="/" element={<Songs />} />
+        <Route path="/all-songs" element={<AllSongs />} />
       </Routes>
     </BrowserRouter>
     </ReactLenis>

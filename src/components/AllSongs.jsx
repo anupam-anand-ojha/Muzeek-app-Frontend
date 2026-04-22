@@ -1,12 +1,10 @@
 import Card from "./Card";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
-function Songs() {
+function AllSongs() {
 
-  const [songs, setSongs] = useState([]); 
-  const navigate = useNavigate();
+  const [songs, setSongs] = useState([]);
 
   useEffect(() => {
     axios.get("https://anupam-music-api.onrender.com/api/music") 
@@ -16,21 +14,10 @@ function Songs() {
 
   return (
     <div className="pl-8 pr-5 mt-20">
+      <h2 className="text-3xl font-bold mb-6">All Songs</h2>
 
-      {/* Header */}
-      <div className="flex justify-between items-center mb-6 px-2">
-        <h2 className="text-3xl font-bold">Songs</h2>
-        <button 
-          onClick={() => navigate("/all-songs")}
-          className="text-sm text-gray-400 hover:text-white"
-        >
-          See All
-        </button>
-      </div>
-
-      {/* Only 12 Songs */}
       <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
-        {songs.slice(0, 12).map((song) => (
+        {songs.map((song) => (
           <Card 
             key={song._id}
             songName={song.title}
@@ -39,9 +26,8 @@ function Songs() {
           />
         ))}
       </div>
-
     </div>
   );
 }
 
-export default Songs;
+export default AllSongs;
