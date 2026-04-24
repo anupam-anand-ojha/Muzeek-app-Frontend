@@ -1,6 +1,15 @@
 import React from 'react'
 import Card from '../components/Card'
+import { useEffect,useState } from 'react'
+import axios from 'axios';
 function Trending() {
+
+  const [songs, setsongs] = useState([]);
+
+  useEffect(() => {
+    axios.get
+  }, [])
+  
   return (
 
     

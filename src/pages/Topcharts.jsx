@@ -1,6 +1,7 @@
 import React from 'react'
 import Card from '../components/Card'
 import { useEffect , useState} from 'react'
+import axios from 'axios'
 
 function TopCharts() {
 
