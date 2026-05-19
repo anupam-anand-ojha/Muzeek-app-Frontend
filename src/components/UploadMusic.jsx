@@ -129,7 +129,7 @@ function UploadMusic() {
               onChange={(e) => setTitle(e.target.value)}
             />
 
-            <label className="label">Upload your Image here</label>
+            <label className="label">Upload Your Image Here</label>
             <input
               type="file"
               className="file-input file-input-neutral"
@@ -137,7 +137,7 @@ function UploadMusic() {
               onChange={(e) => setImage(e.target.files[0])}
             />
 
-            <label className="label">Upload your File here</label>
+            <label className="label">Upload Your File Here</label>
             <input
               type="file"
               className="file-input file-input-neutral"
