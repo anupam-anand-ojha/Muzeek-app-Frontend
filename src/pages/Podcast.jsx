@@ -11,10 +11,30 @@ function Podcast() {
 
       <ul className="list-disc ml-6 text-lg">
 
-        <li>Tech Talks Daily</li>
-        <li>Startup Stories</li>
-        <li>Motivation with Sandeep</li>
-        <li>History Explained</li>
+      <li>Tech Talks Daily</li>
+      <li>Startup Stories</li>
+      <li>Motivation with Sandeep</li> 
+      <li>History Explained</li>
+      <li>Tech Talks Daily</li>
+      <li>Startup Stories</li>
+      <li>Motivation with Sandeep</li>
+      <li>History Explained</li>
+
+      <li>Music Vibes Podcast</li>
+      <li>Behind The Beats</li>
+      <li>Indie Artist Spotlight</li>
+      <li>Sound Stories</li>
+      <li>Rhythm & Talks</li>
+      <li>Melody Makers</li>
+      <li>Studio Sessions</li>
+      <li>The Music Hustle</li>
+      <li>Lyrics & Life</li>
+      <li>Desi Music Diaries</li>
+      <li>Lo-Fi Talks</li>
+      <li>Beat Breakdown</li>
+      <li>Voices of Music</li>
+      <li>Underground Sounds</li>
+      <li>DJ Night Talks</li>
 
       </ul>
 
