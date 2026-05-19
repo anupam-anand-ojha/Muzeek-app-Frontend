@@ -44,7 +44,7 @@ function ArtistLogin() {
             <p className="py-6">
               Sign in to your artist account to start creating and sharing your music.
               Upload your tracks, manage your albums, and grow your audience.
-              This portal is designed exclusively for artists.
+              This portal is designed exclusively for artists...
             </p>
           </div>
 
