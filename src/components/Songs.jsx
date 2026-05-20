@@ -18,7 +18,7 @@ function Songs() {
     <div className="pl-8 pr-5 mt-20">
 
       {/* Header */}
-      <div className="flex justify-between items-center mb-6 px-2">
+      <div className="flex justify-between items-center mb-6 pl-10">
         <h2 className="text-3xl font-bold">Songs</h2>
         <button 
           onClick={() => navigate("/all-songs")}
