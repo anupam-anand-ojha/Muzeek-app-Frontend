@@ -5,11 +5,11 @@ function Podcast() {
    <div className='h-screen overflow-hidden bg-cover bg-center bg-no-repeat'style={{ backgroundImage: "url(https://images.unsplash.com/photo-1478737270239-2f02b77fc618?q=80&w=1740&auto=format&fit=crop)" }}>
     <div className="px-20 my-20">
 
-      <h1 className="text-3xl font-bold mb-6">
+      <h1 className="text-4xl font-bold text-zinc-100 mb-6 ">
         Podcasts
       </h1>
 
-      <ul className="list-disc ml-6 text-lg">
+      <ul className="list-disc ml-6 text-lg text-white/70">
 
       <li>Tech Talks Daily</li>
       <li>Startup Stories</li>
@@ -33,8 +33,7 @@ function Podcast() {
       <li>Lo-Fi Talks</li>
       <li>Beat Breakdown</li>
       <li>Voices of Music</li>
-      <li>Underground Sounds</li>
-      <li>DJ Night Talks</li>
+  
 
       </ul>
 
