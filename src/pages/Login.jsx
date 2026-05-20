@@ -30,12 +30,12 @@ function Login() {
   return (
     <div className="hero min-h-screen" style={{
     backgroundImage:
-      "url(https://images.unsplash.com/photo-1725014880788-9faccc7ca16e?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fG11c2ljfGVufDB8MHw0fHx8Mg%3D%3D)",
+      "url(https://images.unsplash.com/photo-1622820608546-cbd63d2af699?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)",
   }}> 
   <div className="hero-content flex-col lg:flex-row-reverse">
     <div className="text-center lg:text-left">
-      <h1 className="text-5xl  font-bold">Login now!</h1>
-      <p className="py-6 ">
+      <h1 className="text-5xl text-white  font-bold">Login now!</h1>
+      <p className="py-6 text-white ">
        Login to step into a beautiful music world. Discover songs you love, explore new vibes, and enjoy every beat without limits.
       </p>
     </div>
