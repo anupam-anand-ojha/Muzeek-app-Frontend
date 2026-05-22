@@ -19,7 +19,7 @@ function Footer() {
       <br />
       Stream music, discover artists, and create your own sound.
       <br />
-      Built for music lovers & creators.
+      Built for music lovers & creators..
     </p>
   </aside>
 
