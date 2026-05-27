@@ -29,7 +29,7 @@ function Songs() {
       </div>
 
       {/* Only 12 Songs */}
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 pl-8">
         {songs.slice(0, 12).map((song) => (
           <Card 
             key={song._id}
