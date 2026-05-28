@@ -20,8 +20,8 @@ function Herocard() {
         Top Charts
       </h2>
 
-      <div className="flex overflow-x-auto gap-6 px-8 scrollbar-hide">
-        {songs.slice(0, 12).map((song) => (
+      <div className="flex overflow-hidden gap-6 px-8 scrollbar-hide">
+        {songs.slice(7, 13).map((song) => (
           <Card 
             key={song._id}
             songName={song.title}
@@ -36,8 +36,8 @@ function Herocard() {
         New Releases
       </h2>
 
-      <div className="flex overflow-x-auto gap-6 px-8 scrollbar-hide">
-        {songs.slice(12, 24).map((song) => (
+      <div className="flex overflow-hidden gap-6 px-8 scrollbar-hide">
+        {songs.slice(1, 7).map((song) => (
           <Card 
             key={song._id}
             songName={song.title}

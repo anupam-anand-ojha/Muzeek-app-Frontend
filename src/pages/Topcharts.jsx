@@ -14,14 +14,14 @@ useEffect(() => {
 }, [])
 
   return (
-    <div className="px20 my-20">
+    <div className="px20 my-20 overflow-hidden">
 
-      <h1 className="text-3xl font-bold mb-6 px-20 my-20">
+      <h1 className="text-3xl font-bold mb-6 px-20 my-20 ">
         Top Charts
       </h1>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6 px-20 my-20">
-        {songs.slice(0, 12).map((song) => (
+        {songs.slice(0, 6).map((song) => (
           <Card 
             key={song._id}
             songName={song.title}
