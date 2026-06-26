@@ -1,14 +1,23 @@
 import React, { useState } from "react";
 
-function Card({ songName, image ="https://plus.unsplash.com/premium_vector-1727360201453-3c88c322a322?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-, audio }) {
+let currentAudio = null;
+
+function Card({
+  songName,
+  image = "https://plus.unsplash.com/premium_vector-1727360201453-3c88c322a322?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  audio,
+}) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [music, setMusic] = useState(null);
 
   const handlePlayPause = () => {
     if (!music) {
+      if (currentAudio) currentAudio.pause();
+
       const newMusic = new Audio(audio);
       newMusic.play();
+
+      currentAudio = newMusic;
       setMusic(newMusic);
       setIsPlaying(true);
     } else {
@@ -16,7 +25,12 @@ function Card({ songName, image ="https://plus.unsplash.com/premium_vector-17273
         music.pause();
         setIsPlaying(false);
       } else {
+        if (currentAudio && currentAudio !== music) {
+          currentAudio.pause();
+        }
+
         music.play();
+        currentAudio = music;
         setIsPlaying(true);
       }
     }
@@ -24,7 +38,6 @@ function Card({ songName, image ="https://plus.unsplash.com/premium_vector-17273
 
   return (
     <div className="card bg-base-200 w-full shadow-xl hover:bg-base-300 transition-all duration-300 cursor-pointer group">
-
       <figure className="px-4 pt-4 relative aspect-square overflow-hidden">
         <img
           src={image}
@@ -45,7 +58,6 @@ function Card({ songName, image ="https://plus.unsplash.com/premium_vector-17273
           {songName}
         </h2>
       </div>
-
     </div>
   );
 }
