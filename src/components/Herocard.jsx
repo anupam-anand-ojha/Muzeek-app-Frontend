@@ -1,20 +1,31 @@
-import React, { useEffect, useState } from 'react'
-import Card from './Card'
+import React, { useEffect, useState } from "react";
+import Card from "./Card";
 import axios from "axios";
 
 function Herocard() {
-
   const [songs, setSongs] = useState([]);
 
   useEffect(() => {
-    axios.get("https://anupam-music-api.onrender.com/api/music")
-      .then(res => setSongs(res.data))
-      .catch(err => console.log(err));
+    const fetchSongs = async () => {
+      try {
+        const res = await axios.get(
+          "https://anupam-music-api.onrender.com/api/music"
+        );
+
+        setSongs(res.data);
+      } catch (err) {
+        console.log(err);
+
+      //retry 
+        setTimeout(fetchSongs, 3000);
+      }
+    };
+
+    fetchSongs();
   }, []);
 
   return (
-    <div className='pl-8'>
-
+    <div className="pl-8">
       {/* Top Charts */}
       <h2 className="text-3xl font-bold mt-20 mb-6 px-8">
         Top Charts
@@ -22,7 +33,7 @@ function Herocard() {
 
       <div className="flex overflow-hidden gap-6 px-8 scrollbar-hide">
         {songs.slice(7, 13).map((song) => (
-          <Card 
+          <Card
             key={song._id}
             songName={song.title}
             image={song.image}
@@ -38,7 +49,7 @@ function Herocard() {
 
       <div className="flex overflow-hidden gap-6 px-8 scrollbar-hide">
         {songs.slice(1, 7).map((song) => (
-          <Card 
+          <Card
             key={song._id}
             songName={song.title}
             image={song.image}
@@ -46,9 +57,8 @@ function Herocard() {
           />
         ))}
       </div>
-
     </div>
-  )
+  );
 }
 
-export default Herocard
+export default Herocard;
