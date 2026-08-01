@@ -19,6 +19,8 @@ import Podcast from "./pages/Podcast"
 import Setting from "./pages/Setting"
 import Login from "./pages/Login"
 import SignUp from "./pages/SignUp"
+import API from './api/axios'
+import { useEffect, useState } from 'react'
 
 
 
@@ -32,14 +34,29 @@ function Home() {
     // called every scroll
     console.log(lenis)
   })
+
+  const [songs, setSongs] = useState([]);
+
+  useEffect( () => {
+  const fetchSongs = async () => {
+    try{
+      const res = await API.get("/api/music");
+      setSongs(res.data);
+    }
+    catch(err){
+      console.log("Failed to fetch songs",err);
+    }
+  }
+  fetchSongs();
+  },[]);
   return (
     <>
    
       <Hero/>
-      <Herocard/>
+      <Herocard songs ={songs}/>
       <ArtistLogin/>
       <Artists/>
-      <Songs/>
+      <Songs songs ={songs}/>
       <Footer/>
       
     </>
@@ -65,7 +82,6 @@ function App() {
         <Route path="/signUp" element={<SignUp/>} />
         <Route path="/upload" element={<UploadMusic />} />
         <Route path="/artistlogin" element={<ArtistLogin />}/>
-        <Route path="/" element={<Songs />} />
         <Route path="/all-songs" element={<AllSongs />} />
       </Routes>
     </BrowserRouter>
