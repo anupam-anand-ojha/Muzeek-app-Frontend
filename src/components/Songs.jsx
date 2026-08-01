@@ -1,7 +1,7 @@
 import Card from "./Card";
 import { useEffect, useState } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import API from "../api/axios";
 
 function Songs() {
 
@@ -9,7 +9,7 @@ function Songs() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get("https://anupam-music-api.onrender.com/api/music") 
+    API.get("/api/music") 
       .then(res => setSongs(res.data))
       .catch(err => console.log(err));
   }, []);
