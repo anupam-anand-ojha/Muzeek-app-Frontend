@@ -1,23 +1,8 @@
 import Card from "./Card";
-import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import API from "../api/axios";
 
-function Songs() {
-  const [songs, setSongs] = useState([]);
+function Songs({songs}) {
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const fetchSongs = async () => {
-      try {
-        const res = await API.get("/api/music");
-        setSongs(res.data);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    fetchSongs();
-  }, []);
 
   return (
     <div className="pl-8 pr-5 mt-20">
