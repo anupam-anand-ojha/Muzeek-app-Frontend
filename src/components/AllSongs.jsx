@@ -1,17 +1,7 @@
 import Card from "./Card";
-import { useEffect, useState } from "react";
 import axios from "axios";
 
-function AllSongs() {
-
-  const [songs, setSongs] = useState([]);
-
-  useEffect(() => {
-    axios.get("https://anupam-music-api.onrender.com/api/music") 
-      .then(res => setSongs(res.data))
-      .catch(err => console.log(err));
-  }, []);
-
+function AllSongs({songs}) {
   return (
     <div className="pl-8">
     <div className="pl-8 pr-5 mt-20">

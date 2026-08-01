@@ -1,29 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Card from "./Card";
-import axios from "axios";
 
-function Herocard() {
-  const [songs, setSongs] = useState([]);
 
-  useEffect(() => {
-    const fetchSongs = async () => {
-      try {
-        const res = await axios.get(
-          "https://anupam-music-api.onrender.com/api/music"
-        );
-
-        setSongs(res.data);
-      } catch (err) {
-        console.log(err);
-
-      //retry 
-        setTimeout(fetchSongs, 3000);
-      }
-    };
-
-    fetchSongs();
-  }, []);
-
+function Herocard({songs}) {
   return (
     <div className="pl-8">
       {/* Top Charts */}

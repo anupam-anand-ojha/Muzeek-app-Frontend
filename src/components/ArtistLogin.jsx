@@ -23,7 +23,7 @@ function ArtistLogin() {
 
       
       if (res.data.user.role === "artist") {
-        navigate("/upload")   // 🔥 redirect to upload page
+        navigate("/upload")   // redirect to upload page
       } else {
         alert("Only artists can login here")
       }
