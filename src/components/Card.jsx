@@ -40,6 +40,9 @@ function Card({
     <div className="card bg-base-200 w-full shadow-xl hover:bg-base-300 transition-all duration-300 cursor-pointer group">
       <figure className="px-4 pt-4 relative aspect-square overflow-hidden">
         <img
+          loading="lazy"
+          decoding="async"
+          fetchPriority="low"
           src={image}
           alt={songName}
           className="rounded-xl w-full h-full object-cover"
@@ -54,9 +57,7 @@ function Card({
       </figure>
 
       <div className="card-body p-4">
-        <h2 className="card-title text-sm font-bold truncate">
-          {songName}
-        </h2>
+        <h2 className="card-title text-sm font-bold truncate">{songName}</h2>
       </div>
     </div>
   );
