@@ -9,7 +9,7 @@ import Songs from "./components/Songs";
 import AllSongs from "./components/AllSongs";
 import UploadMusic from "./components/UploadMusic";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { ReactLenis,} from "lenis/react";
+
 
 import Trending from "./pages/Trending";
 import Library from "./pages/Library";
@@ -52,7 +52,7 @@ function App() {
   }, []);
 
   return (
-    <ReactLenis root>
+    
       <BrowserRouter>
         <Navbar />
 
@@ -71,7 +71,7 @@ function App() {
           <Route path="/all-songs" element={<AllSongs songs={songs} />} />
         </Routes>
       </BrowserRouter>
-    </ReactLenis>
+   
   );
 }
 
