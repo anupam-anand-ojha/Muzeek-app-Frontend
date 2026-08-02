@@ -66,7 +66,7 @@ function UploadMusic() {
 
       setloading(true);
 
-      // 🚀 Parallel upload
+      //  Parallel upload
       const [songRes, imageRes] = await Promise.all([
         uploadToImageKit(file),
         uploadToImageKit(image),
@@ -75,7 +75,7 @@ function UploadMusic() {
       console.log("SONG:", songRes);
       console.log("IMAGE:", imageRes);
 
-      // ✅ Send URLs to backend
+      // Send URLs to backend
       const res = await API.post(
         "/api/music/upload",
         {
