@@ -49,7 +49,7 @@ function Artists() {
           </div>
 
           <h3 className="mt-3 font-semibold">
-            Danial Brown
+            Sudhanshu
           </h3>
 
           <p className="text-sm opacity-70">
@@ -72,7 +72,7 @@ function Artists() {
           </div>
 
           <h3 className="mt-3 font-semibold">
-            Shivani Singh
+             Raja
           </h3>
 
           <p className="text-sm opacity-70">
@@ -141,7 +141,7 @@ function Artists() {
           </div>
 
           <h3 className="mt-3 font-semibold">
-            Supriya Roy
+            Altaf Roy
           </h3>
 
           <p className="text-sm opacity-70">
