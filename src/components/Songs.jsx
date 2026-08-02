@@ -1,5 +1,5 @@
 import Card from "./Card";
-import SkeletonCard from "./SkeletonCard";
+import SkeletonCard from "../ SkeletonCard";
 import { useNavigate } from "react-router-dom";
 
 function Songs({ songs }) {
