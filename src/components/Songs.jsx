@@ -1,5 +1,5 @@
 import Card from "./Card";
-import SkeletonCard from "../ SkeletonCard";
+import SkeletonCard from "./SkeletonCard.jsx";
 import { useNavigate } from "react-router-dom";
 
 function Songs({ songs }) {
@@ -24,9 +24,7 @@ function Songs({ songs }) {
           ? Array.from({ length: 12 }).map((_, index) => (
               <SkeletonCard key={index} />
             ))
-          : songs
-              .slice(0, 12)
-              .map((song) => (
+          : songs.slice(0, 12).map((song) => (
                 <Card
                   key={song._id}
                   songName={song.title}
