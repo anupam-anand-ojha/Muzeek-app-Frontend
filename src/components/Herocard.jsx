@@ -12,15 +12,18 @@ function Herocard({ songs }) {
       <div className="flex overflow-hidden gap-6 px-8 scrollbar-hide">
         {songs.length === 0
           ? Array.from({ length: 6 }).map((_, index) => (
-              <SkeletonCard key={index} />
+              <div key={index} className="w-52 flex-shrink-0">
+                <SkeletonCard />
+              </div>
             ))
           : songs.slice(7, 13).map((song) => (
-              <Card
-                key={song._id}
-                songName={song.title}
-                image={song.image}
-                audio={song.url}
-              />
+              <div key={song._id} className="w-52 flex-shrink-0">
+                <Card
+                  songName={song.title}
+                  image={song.image}
+                  audio={song.url}
+                />
+              </div>
             ))}
       </div>
 
@@ -32,15 +35,18 @@ function Herocard({ songs }) {
       <div className="flex overflow-hidden gap-6 px-8 scrollbar-hide">
         {songs.length === 0
           ? Array.from({ length: 6 }).map((_, index) => (
-              <SkeletonCard key={index} />
+              <div key={index} className="w-52 flex-shrink-0">
+                <SkeletonCard />
+              </div>
             ))
           : songs.slice(1, 7).map((song) => (
-              <Card
-                key={song._id}
-                songName={song.title}
-                image={song.image}
-                audio={song.url}
-              />
+              <div key={song._id} className="w-52 flex-shrink-0">
+                <Card
+                  songName={song.title}
+                  image={song.image}
+                  audio={song.url}
+                />
+              </div>
             ))}
       </div>
     </div>

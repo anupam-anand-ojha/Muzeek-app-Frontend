@@ -2,7 +2,7 @@ import React from 'react'
 
 function SkeletonCard() {
   return (
-    <div className="card bg-base-200 shadow-xl border border-base-300 overflow-hidden">
+    <div className="card bg-base-200 w-52 flex-shrink-0 shadow-xl border border-base-300 overflow-hidden animate-pulse">
       <figure className="p-4">
         <div className="relative w-full aspect-square rounded-xl overflow-hidden bg-base-300">
           <div className="absolute inset-0 shimmer"></div>
