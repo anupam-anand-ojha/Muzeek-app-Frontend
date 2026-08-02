@@ -26,7 +26,7 @@ function Artists() {
           </div>
 
           <h3 className="mt-3 font-semibold">
-            Arijit Singh
+             Atharv
           </h3>
 
           <p className="text-sm opacity-70">
@@ -49,7 +49,7 @@ function Artists() {
           </div>
 
           <h3 className="mt-3 font-semibold">
-            Badshah
+            Danial Brown
           </h3>
 
           <p className="text-sm opacity-70">
@@ -72,7 +72,7 @@ function Artists() {
           </div>
 
           <h3 className="mt-3 font-semibold">
-            Neha Kakkar
+            Shivani Singh
           </h3>
 
           <p className="text-sm opacity-70">
@@ -95,7 +95,7 @@ function Artists() {
           </div>
 
           <h3 className="mt-3 font-semibold">
-            AP Dhillon
+            Rahul Jaiker
           </h3>
 
           <p className="text-sm opacity-70">
@@ -118,7 +118,7 @@ function Artists() {
           </div>
 
           <h3 className="mt-3 font-semibold">
-            Armaan Malik
+            Arrav Malik
           </h3>
 
           <p className="text-sm opacity-70">
@@ -141,7 +141,7 @@ function Artists() {
           </div>
 
           <h3 className="mt-3 font-semibold">
-            Shreya Ghoshal
+            Supriya Roy
           </h3>
 
           <p className="text-sm opacity-70">
