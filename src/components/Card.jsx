@@ -50,7 +50,11 @@ function Card({
 
         <button
           onClick={handlePlayPause}
-          className="btn btn-circle btn-primary absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition"
+          className={`btn btn-circle btn-secondary absolute bottom-1 lg:bottom-4 right-4 transition ${
+            isPlaying
+              ? "opacity-100"
+              : "opacity-80 lg:opacity-0 group-hover:opacity-100"
+          }`}
         >
           {isPlaying ? "⏸" : "▶"}
         </button>
