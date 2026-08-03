@@ -4,7 +4,7 @@ function Artists() {
   return (
     <div className="px-10 mt-16">
 
-      <h2 className="text-2xl font-bold mb-6 pl-10">
+      <h2 className="text-2xl font-bold mb-6 lg:pl-10">
         Top Artists
       </h2>
 

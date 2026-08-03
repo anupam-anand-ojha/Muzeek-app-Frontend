@@ -7,7 +7,7 @@ function Songs({ songs }) {
 
   return (
     <div className="pl-8 pr-5 mt-20">
-      <div className="flex justify-between items-center mb-6 pl-10">
+      <div className="flex justify-between items-center mb-6 lg:pl-10">
         <h2 className="text-3xl font-bold">Songs</h2>
 
         <button
@@ -18,7 +18,7 @@ function Songs({ songs }) {
         </button>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 pl-8">
+      <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 lg:gap-6 lg:pl-8">
         {/*  12 song only */}
         {songs.length === 0
           ? Array.from({ length: 12 }).map((_, index) => (
