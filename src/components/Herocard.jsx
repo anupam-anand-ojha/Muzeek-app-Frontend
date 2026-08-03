@@ -9,7 +9,7 @@ function Herocard({ songs }) {
         Top Charts
       </h2>
 
-      <div className="flex overflow-hidden gap-6 px-8 scrollbar-hide">
+      <div className="flex  overflow-hidden gap-6 px-8 scrollbar-hide">
         {songs.length === 0
           ? Array.from({ length: 6 }).map((_, index) => (
               <div key={index} className="w-52 flex-shrink-0">

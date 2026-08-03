@@ -8,7 +8,7 @@ function Artists() {
         Top Artists
       </h2>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+      <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
 
         {/* Artist 1 */}
         <div className="text-center cursor-pointer group">
