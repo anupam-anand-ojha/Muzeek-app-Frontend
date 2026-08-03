@@ -3,7 +3,7 @@ import React from 'react'
 function Setting() {
   return (
     <div className="h-screen overflow-hidden bg-cover bg-center bg-no-repeat"  style={{ backgroundImage: "" }}>
-      <div className='px-20 my-20'>
+      <div className='lg:px-20 my-20'>
       <h1 className="text-3xl font-bold mb-6 ">
         Settings
       </h1>

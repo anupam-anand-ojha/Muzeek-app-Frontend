@@ -1,37 +1,31 @@
 import React from 'react'
 import Card from '../components/Card'
-import { useEffect , useState} from 'react'
-import axios from 'axios'
+import SkeletonCard from '../components/SkeletonCard'
 
-function TopCharts() {
 
-  const [songs, setsongs] = useState([])
+function TopCharts({songs}) {
 
-useEffect(() => {
-      axios.get("https://anupam-music-api.onrender.com/api/music")
-      .then(res => setSongs(res.data))
-      .catch(err => console.log(err));
-}, [])
 
   return (
-    <div className="px20 my-20 overflow-hidden">
+     <div className="lg:pl-8">
+      <div className="lg:pl-8 lg:pr-5 mt-20">
+        <h2 className="text-3xl font-bold mb-6 text-center">Top Charts</h2>
 
-      <h1 className="text-3xl font-bold mb-6 px-20 my-20 ">
-        Top Charts
-      </h1>
-
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 px-20 my-20">
-        {songs.slice(0, 6).map((song) => (
-          <Card 
-            key={song._id}
-            songName={song.title}
-            image={song.image}
-            audio={song.url}
-          />
-        ))}
- 
+        <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 lg:gap-6">
+          {songs.length === 0
+            ? Array.from({ length: 12 }).map((_, index) => (
+                <SkeletonCard key={index} />
+              ))
+            : songs.map((song) => (
+                <Card
+                  key={song._id}
+                  songName={song.title}
+                  image={song.image}
+                  audio={song.url}
+                />
+              ))}
+        </div>
       </div>
-
     </div>
   )
 }

@@ -1,34 +1,39 @@
 import React from 'react'
 import Card from '../components/Card'
-import { useEffect,useState } from 'react'
-import axios from 'axios';
+import SkeletonCard from '../components/SkeletonCard'
 
 
-function Trending() {
-
-  const [songs, setsongs] = useState([]);
-
-  useEffect(() => {
-    axios.get("https://anupam-music-api.onrender.com/api/music")
-      .then(res => setsongs(res.data))
-      .catch(err => console.log(err));
-  }, [])
-  
+function Trending({songs}) {
   return (
 
-    
+  <div className="px-2 lg:pl-8 lg:pr-5 mt-20">
+      <div className="flex justify-between items-center mb-6 lg:pl-10">
+        <h2 className="text-3xl font-bold">Songs</h2>
 
- <div className="cards grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 px-20 my-20 pr-5">
+        <button
+          onClick={() => navigate("/all-songs")}
+          className="text-sm text-gray-400 hover:text-white"
+        >
+          See All
+        </button>
+      </div>
 
-   {songs.slice(12, 24).map((song) => (
-          <Card 
-            key={song._id}
-            songName={song.title}
-            image={song.image}
-            audio={song.url}
-          />
-        ))}
- </div>
+      <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 lg:gap-6 lg:pl-8">
+        {/*  8 song only */}
+        {songs.length === 0
+          ? Array.from({ length: 8 }).map((_, index) => (
+              <SkeletonCard key={index} />
+            ))
+          : songs.slice(0, 8).map((song) => (
+                <Card
+                  key={song._id}
+                  songName={song.title}
+                  image={song.image}
+                  audio={song.url}
+                />
+              ))}
+      </div>
+    </div>
   )
 }
 
