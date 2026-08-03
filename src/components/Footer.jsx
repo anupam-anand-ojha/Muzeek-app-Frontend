@@ -1,61 +1,73 @@
-import React from 'react'
+import React from "react";
 
 function Footer() {
   return (
-    <footer className="footer sm:footer-horizontal bg-base-200 text-base-content pl-20 mt-10 py-30">
+    <footer className="bg-base-200 border-t border-base-300 mt-16">
 
-  <aside>
-    <svg
-      width="50"
-      height="50"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-      className="fill-current">
-      <path d="M12 3v12.55a4 4 0 1 0 2 3.45V7h4V3h-6z" />
-    </svg>
+      <div className="max-w-7xl mx-auto px-6 py-12">
 
-    <p>
-      MUZEEK
-      <br />
-      Stream music, discover artists, and create your own sound.
-      <br />
-      Built for music lovers & creators.
-    </p>
-  </aside>
+        {/* Brand */}
+        <div className="text-center lg:text-left">
+          <h2 className="text-3xl font-extrabold">MUZEEK ♪</h2>
+          <p className="mt-3 text-sm opacity-70 max-w-md mx-auto lg:mx-0">
+            Stream music, discover artists, and create your own sound.
+            Built for music lovers & creators.
+          </p>
+        </div>
 
-  <nav>
-    <h6 className="footer-title">Discover</h6>
-    <a className="link link-hover">Trending Songs</a>
-    <a className="link link-hover">Top Artists</a>
-    <a className="link link-hover">New Releases</a>
-    <a className="link link-hover">Playlists</a>
-  </nav>
+        {/* Links */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-10">
 
-  <nav>
-    <h6 className="footer-title">For Artists</h6>
-    <a className="link link-hover">Artist Login</a>
-    <a className="link link-hover">Upload Music</a>
-    <a className="link link-hover">Artist Dashboard</a>
-    <a className="link link-hover">Grow Your Audience</a>
-  </nav>
+          <div>
+            <h3 className="font-bold mb-3">Discover</h3>
+            <ul className="space-y-2 text-sm opacity-80">
+              <li><a className="hover:text-primary">Trending Songs</a></li>
+              <li><a className="hover:text-primary">Top Artists</a></li>
+              <li><a className="hover:text-primary">New Releases</a></li>
+              <li><a className="hover:text-primary">Playlists</a></li>
+            </ul>
+          </div>
 
-  <nav>
-    <h6 className="footer-title">Support</h6>
-    <a className="link link-hover">Help Center</a>
-    <a className="link link-hover">Contact Us</a>
-    <a className="link link-hover">Community</a>
-    <a className="link link-hover">Feedback</a>
-  </nav>
+          <div>
+            <h3 className="font-bold mb-3">Artists</h3>
+            <ul className="space-y-2 text-sm opacity-80">
+              <li><a className="hover:text-primary">Artist Login</a></li>
+              <li><a className="hover:text-primary">Upload Music</a></li>
+              <li><a className="hover:text-primary">Dashboard</a></li>
+              <li><a className="hover:text-primary">Audience</a></li>
+            </ul>
+          </div>
 
-  <nav>
-    <h6 className="footer-title">Legal</h6>
-    <a className="link link-hover">Terms of Service</a>
-    <a className="link link-hover">Privacy Policy</a>
-    <a className="link link-hover">Copyright @muzeek </a>
-  </nav>
+          <div>
+            <h3 className="font-bold mb-3">Support</h3>
+            <ul className="space-y-2 text-sm opacity-80">
+              <li><a className="hover:text-primary">Help Center</a></li>
+              <li><a className="hover:text-primary">Contact</a></li>
+              <li><a className="hover:text-primary">Community</a></li>
+              <li><a className="hover:text-primary">Feedback</a></li>
+            </ul>
+          </div>
 
-</footer>
-  )
+          <div>
+            <h3 className="font-bold mb-3">Legal</h3>
+            <ul className="space-y-2 text-sm opacity-80">
+              <li><a className="hover:text-primary">Terms</a></li>
+              <li><a className="hover:text-primary">Privacy</a></li>
+              <li><a className="hover:text-primary">Copyright</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+        {/* Bottom */}
+        <div className="border-t border-base-300 mt-10 pt-6 text-center text-xs opacity-60">
+          © 2026 MUZEEK. All Rights Reserved.
+        </div>
+
+      </div>
+
+    </footer>
+  );
 }
 
-export default Footer
+export default Footer;
