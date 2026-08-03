@@ -60,7 +60,7 @@ function App() {
           <Route path="/" element={<Home songs={songs} />} />
           <Route path="/Trending" element={<Trending songs={songs} />} />
           <Route path="/Library" element={<Library />} />
-          <Route path="/NewReleases" element={<NewReleases songs={songs}/>} />
+          <Route path="/NewReleases" element={<NewReleases songs={songs} />} />
           <Route path="/TopCharts" element={<TopCharts songs={songs} />} />
           <Route path="/Podcast" element={<Podcast />} />
           <Route path="/Setting" element={<Setting />} />
