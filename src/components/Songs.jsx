@@ -6,7 +6,7 @@ function Songs({ songs }) {
   const navigate = useNavigate();
 
   return (
-    <div className="pl-8 pr-5 mt-20">
+    <div className="px-2 lg:pl-8 lg:pr-5 mt-20">
       <div className="flex justify-between items-center mb-6 lg:pl-10">
         <h2 className="text-3xl font-bold">Songs</h2>
 

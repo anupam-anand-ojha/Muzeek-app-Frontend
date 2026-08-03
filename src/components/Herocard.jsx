@@ -3,7 +3,7 @@ import SkeletonCard from "./SkeletonCard";
 
 function Herocard({ songs }) {
   return (
-    <div className="pl-8 pr-5 mt-20">
+    <div className="px-2 lg:pl-8 lg:pr-5 mt-20">
       {/* Top Charts */}
       <h2 className="text-3xl font-bold mb-6 lg:pl-10">
         Top Charts
