@@ -15,7 +15,7 @@ function NewReleases({songs}) {
           ? Array.from({ length: 6 }).map((_, index) => (
               <SkeletonCard key={index} />
             ))
-          : songs.slice(0, 6).map((song) => (
+          : songs.slice(6, 12).map((song) => (
               <Card
                 key={song._id}
                 songName={song.title}
@@ -35,7 +35,7 @@ function NewReleases({songs}) {
           ? Array.from({ length: 6 }).map((_, index) => (
               <SkeletonCard key={index} />
             ))
-          : songs.slice(6, 12).map((song) => (
+          : songs.slice(0, 6).map((song) => (
               <Card
                 key={song._id}
                 songName={song.title}

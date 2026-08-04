@@ -254,7 +254,7 @@ function Navbar() {
             {/* List item */}
             <li>
               <Link
-                to="/NewRelease"
+                to="/NewReleases"
                 className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
                 data-tip="New Releases"
               >
