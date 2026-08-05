@@ -1,102 +1,110 @@
-import React, { useState } from 'react'
-import API from '../api/axios'
-import { useNavigate } from 'react-router-dom'
+import React, { useState } from "react";
+import API from "../api/axios";
+import { Link, useNavigate } from "react-router-dom";
 
 function ArtistLogin() {
-
   const [form, setForm] = useState({
     email: "",
-    password: ""
-  })
+    password: "",
+  });
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value })
-  }
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
 
-  const handleLogin = async () => {
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
     try {
-      const res = await API.post("/api/auth/login", form)
+      const res = await API.post("/api/auth/login", form);
 
-      console.log(res.data)
-
-      
-      if (res.data.user.role === "artist") {
-        navigate("/upload")   // redirect to upload page
-      } else {
-        alert("Only artists can login here")
+      if (res.data.user.role !== "artist") {
+        alert("Only artists can login here.");
+        return;
       }
 
+      alert("Login Successful!");
+      navigate("/upload");
     } catch (err) {
-      console.log(err)
-      alert("Login failed")
+      const message = err.response?.data?.message;
+
+      if (message === "User not found" || err.response?.status === 404) {
+        alert("Account not found. Please sign up first.");
+      } else if (
+        message === "Invalid credentials" ||
+        err.response?.status === 401
+      ) {
+        alert("Invalid email or password.");
+      } else {
+        alert("Login failed. Please try again.");
+      }
+
+      console.error(err);
     }
-  }
+  };
 
   return (
-    <div>
-      <div className="hero bg-base-200 py-30">
-        <div className="hero-content flex-col lg:flex-row-reverse">
+    <div className="hero bg-base-200 min-h-screen">
+      <div className="hero-content flex-col lg:flex-row-reverse gap-12">
+        <div className="text-center lg:text-left max-w-lg">
+          <h1 className="text-5xl font-bold">Artist Login</h1>
+          <p className="py-6">
+            Sign in to your artist account to upload your music, manage your
+            albums, and connect with your audience.
+          </p>
+        </div>
 
-          <div className="text-center lg:text-left">
-            <h1 className="text-5xl font-bold">Artist Login</h1>
-            <p className="py-6">
-              Sign in to your artist account to start creating and sharing your music.
-              Upload your tracks, manage your albums, and grow your audience.
-              This portal is designed exclusively for artists...
-            </p>
-          </div>
-
-          <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-            <div className="card-body">
+        <div className="card bg-base-100 w-full max-w-sm shadow-2xl">
+          <div className="card-body">
+            <form onSubmit={handleLogin}>
               <fieldset className="fieldset">
-
                 <label className="label">Artist Email</label>
                 <input
                   type="email"
                   name="email"
-                  className="input"
+                  className="input w-full"
                   placeholder="Enter your artist email"
+                  value={form.email}
                   onChange={handleChange}
+                  required
                 />
 
-                <label className="label">Password</label>
+                <label className="label mt-3">Password</label>
                 <input
                   type="password"
                   name="password"
-                  className="input"
+                  className="input w-full"
                   placeholder="Enter your password"
+                  value={form.password}
                   onChange={handleChange}
-                />
-                <label className="label">Role</label>
-                <input
-                  type="text"
-                  name="text"
-                  className="input"
-                  placeholder="Enter your role"
-                  onChange={handleChange}
+                  required
                 />
 
-                <div>
-                  <a className="link link-hover">Forgot your password?</a>
-                </div>
+                <p className="mt-4 text-sm">
+                  Don't have an artist account?{" "}
+                  <Link
+                    to="/signUp"
+                    className="text-red-500 hover:text-red-600 font-semibold"
+                  >
+                    Sign Up First
+                  </Link>
+                </p>
 
-                <button 
-                  className="btn btn-neutral mt-4"
-                  onClick={handleLogin}
+                <button
+                  type="submit"
+                  className="btn btn-neutral mt-6 w-full"
                 >
                   Login & Start Creating Music
                 </button>
-
               </fieldset>
-            </div>
+            </form>
           </div>
-
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default ArtistLogin
+export default ArtistLogin;

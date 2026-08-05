@@ -1,6 +1,9 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function Setting() {
+
+  const navigate = useNavigate();
   return (
     <div className="h-screen overflow-hidden bg-cover bg-center bg-no-repeat"  style={{ backgroundImage: "" }}>
       <div className='lg:px-20 my-20'>
@@ -10,15 +13,16 @@ function Setting() {
 
       <div className="space-y-4">
 
-        <button className="border px-4 py-2">
-          Change Theme
+        <button  onClick={()=> navigate("/login")} className=" btn btn-secondary mt-4 ">
+          LOGIN
         </button>
 
-        <button className="border px-4 py-2">
-          Manage Account
+        <button onClick={() => navigate("/signUp")} className="btn btn-secondary mt-4">
+          SIGN UP
         </button>
 
-        <button className="border px-4 py-2">
+
+        <button className="btn btn-warning ">
           Logout
         </button>
 
